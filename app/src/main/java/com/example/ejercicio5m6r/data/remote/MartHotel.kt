@@ -8,3 +8,8 @@ data class MartHotel(
     val type: String,
     @SerializedName("img_src") val imgSrc: String
 )
+
+/*
+@SerializedName sirve para dar una pariedad entre nombres de variables con los nombres
+de las columnas de las tablas
+*/
