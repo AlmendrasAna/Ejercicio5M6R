@@ -11,5 +11,5 @@ data class MartHotel(
 
 /*
 @SerializedName sirve para dar una pariedad entre nombres de variables con los nombres
-de las columnas de las tablas
+de las columnas de las tablas es bidireccional tanto para enviar como para recivir
 */
