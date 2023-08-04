@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.ejercicio5m6r.data.Repository
+import com.example.ejercicio5m6r.data.local.MartHotelDB
 import com.example.ejercicio5m6r.data.remote.MartHotel
 import com.example.ejercicio5m6r.data.remote.MartHotelRetrofitClient
 import kotlinx.coroutines.launch
@@ -12,15 +13,16 @@ import kotlinx.coroutines.launch
 class MartHotelVM (application: Application):AndroidViewModel(application){
 
 private val repository : Repository
-val martHotelLiveData = MutableLiveData<List<MartHotel>>()
+fun martHotelLiveData () = repository.getMartHorel()
 
 init {
     val api = MartHotelRetrofitClient.getRetrofitMartHotel()
-    repository = Repository(api)
+    val martHotelDB = MartHotelDB.getDatabase(application).getDaoMartHotel()
+    repository = Repository(api,martHotelDB)
 }
 fun getAllMartHotel()= viewModelScope.launch{
 
-    martHotelLiveData.value = repository.getMartHotel()
+    repository.loadMartHote()
 }
 
 }

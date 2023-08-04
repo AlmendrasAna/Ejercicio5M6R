@@ -28,11 +28,11 @@ class ShowListFragment : Fragment() {
 binding = FragmentShowListBinding.inflate(inflater, container, false)
         Log.e("lol", "initAdapter: perro" )
 
-        initAdapter()
+
    binding.showListB.setOnClickListener {
 
        martHotelvm.getAllMartHotel()
-
+       initAdapter()
    }
     return binding.root
 
@@ -44,7 +44,7 @@ binding = FragmentShowListBinding.inflate(inflater, container, false)
 
         binding.recyclerView.adapter = adapter
 
-        martHotelvm.martHotelLiveData.observe(viewLifecycleOwner){
+        martHotelvm.martHotelLiveData().observe(viewLifecycleOwner){
 
             adapter.setData(it)
         }

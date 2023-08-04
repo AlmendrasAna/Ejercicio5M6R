@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.ejercicio5m6r.R
+import com.example.ejercicio5m6r.data.local.MartHotelEntity
 import com.example.ejercicio5m6r.data.remote.MartHotel
 import com.example.ejercicio5m6r.databinding.ItemBinding
 
@@ -13,7 +14,7 @@ import com.example.ejercicio5m6r.databinding.ItemBinding
 class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
 
-    private var martHotels: List<MartHotel> = emptyList()
+    private var martHotels: List<MartHotelEntity> = emptyList()
 
 
 
@@ -33,7 +34,7 @@ class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
         holder.bind(martHotel)
     }
 
-    fun setData(martHotel: List<MartHotel>) {
+    fun setData(martHotel: List<MartHotelEntity>) {
         this.martHotels = martHotel
 
         notifyDataSetChanged()
@@ -42,7 +43,7 @@ class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
     class ViewHolder(private val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(martHotel: MartHotel) {
+        fun bind(martHotel: MartHotelEntity) {
             binding.imageSrcIma.load(martHotel.imgSrc){    crossfade(true)
                 placeholder(R.drawable.baseline_cached_24)
             }
