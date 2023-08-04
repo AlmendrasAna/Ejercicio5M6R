@@ -12,6 +12,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="#AE976C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +39,7 @@
                 android:background="#6A303030"
                 android:gravity="center"
                 android:text="nombre"
-                android:textColor="#C2F7FF"
+                android:textColor="#FFFAEF"
                 app:layout_constraintEnd_toEndOf="@+id/imageSrcIma"
                 app:layout_constraintStart_toStartOf="@+id/imageSrcIma"
                 app:layout_constraintTop_toTopOf="@+id/imageSrcIma" />
