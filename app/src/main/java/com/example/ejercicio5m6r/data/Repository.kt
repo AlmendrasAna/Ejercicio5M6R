@@ -13,11 +13,11 @@ class Repository(private val martHorelApi : MartHotelApi) {
        val bodyResponse= response.body()
 
     bodyResponse?.let {
-        Log.e("lol","sd" )
+
         return it
     }
     }
-        Log.e("lol","sddd" )
+
         return emptyList()
     }
 
