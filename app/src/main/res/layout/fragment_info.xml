@@ -4,16 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.InfoFragment" >
+    tools:context=".view.InfoFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        app:cardBackgroundColor="#ECCA85"
+        app:cardBackgroundColor="#AE976C"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -24,45 +27,59 @@
 
             <ImageView
                 android:id="@+id/imaRoom"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
                 android:src="@drawable/baseline_cached_24"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/idTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Id"
-                app:layout_constraintEnd_toEndOf="@+id/imaRoom"
-                app:layout_constraintStart_toStartOf="@+id/imaRoom"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/typeTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:text="tipo"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="type"
+                android:textColor="#FFDCC2"
+                android:textSize="34sp"
+                app:layout_constraintBottom_toTopOf="@+id/imaRoom"
                 app:layout_constraintEnd_toEndOf="@+id/imaRoom"
+                app:layout_constraintHorizontal_bias="0.514"
+                app:layout_constraintStart_toStartOf="@+id/imaRoom"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.228" />
+
+            <TextView
+                android:id="@+id/idTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#94532502"
+                android:gravity="center|right"
+                android:text="id"
+                android:textAlignment="gravity"
+                android:textAllCaps="false"
+                android:textColor="#FFD3B2"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imaRoom"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/imaRoom" />
 
             <TextView
-                android:id="@+id/precio"
+                android:id="@+id/priceTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:text="$0"
-                android:textSize="24sp"
+                android:textColor="#130800"
+                android:textSize="48sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imaRoom"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imaRoom" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

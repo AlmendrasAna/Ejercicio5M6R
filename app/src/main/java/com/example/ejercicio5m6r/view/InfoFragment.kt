@@ -36,9 +36,9 @@ class InfoFragment : Fragment() {
 
         martHotelvm.getOneMartHotelId(param1.toString()).observe(viewLifecycleOwner){
 
-            binding.idTxt.text = it.id
-            binding.precio.text = it.price.toString()
-            binding.typeTxt.text = it.type.toString()
+            binding.idTxt.text = "id: "+it.id
+            binding.priceTxt.text = "$ "+it.price.toString()
+            binding.typeTxt.text = "tipo de habitacion " + it.type
 
             binding.imaRoom.load(it.imgSrc){    crossfade(true)
                 placeholder(R.drawable.baseline_cached_24)
