@@ -25,4 +25,5 @@ fun getAllMartHotel()= viewModelScope.launch{
     repository.loadMartHote()
 }
 
+    fun getOneMartHotelId(id : String) = repository.getOneMartHorel(id)
 }

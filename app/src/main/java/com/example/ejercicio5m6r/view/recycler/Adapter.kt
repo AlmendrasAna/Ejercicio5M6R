@@ -57,9 +57,10 @@ class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
             binding.cardItem.setOnClickListener{
 
-              val bundle = Bundle()
+              var bundle = Bundle()
                 bundle.putString("id",martHotel.id)
-                Navigation.findNavController(binding.root).navigate(R.id.action_showListFragment_to_infoFragment)
+
+                Navigation.findNavController(binding.root).navigate(R.id.action_showListFragment_to_infoFragment,bundle)
             }
 
         }

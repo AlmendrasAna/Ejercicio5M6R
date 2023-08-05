@@ -15,5 +15,8 @@ suspend fun insertarMartHotel(martHotelEntity: MartHotelEntity)
 suspend fun insertsMartHotels(martHotelEntity: List<MartHotelEntity>)
     @Query("select * from mart_hotel_db order by id ASC ")
     fun getMartHotel() : LiveData<List<MartHotelEntity>>
+    @Query("select * from mart_hotel_db where id = :id")
+    fun getMartHotelId (id : String): LiveData<MartHotelEntity>
+
 }
 

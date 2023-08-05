@@ -5,13 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import coil.load
+import com.example.ejercicio5m6r.R
 import com.example.ejercicio5m6r.databinding.FragmentInfoBinding
 
 private const val ARG_PARAM1 = "id"
 
 
 class InfoFragment : Fragment() {
-
+    private val martHotelvm : MartHotelVM by activityViewModels()
     private  lateinit var  binding : FragmentInfoBinding
 
     private var param1: String? = null
@@ -30,7 +33,21 @@ class InfoFragment : Fragment() {
     ): View? {
 
         binding = FragmentInfoBinding.inflate(layoutInflater,container,false)
-        binding.idTxt.text = param1
+
+        martHotelvm.getOneMartHotelId(param1.toString()).observe(viewLifecycleOwner){
+
+            binding.idTxt.text = it.id
+            binding.precio.text = it.price.toString()
+            binding.typeTxt.text = it.type.toString()
+
+            binding.imaRoom.load(it.imgSrc){    crossfade(true)
+                placeholder(R.drawable.baseline_cached_24)
+            }
+
+
+        }
+
+
 
         return binding.root
 

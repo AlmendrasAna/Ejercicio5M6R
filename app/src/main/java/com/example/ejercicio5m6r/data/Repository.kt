@@ -26,6 +26,7 @@ class Repository(private val martHorelApi: MartHotelApi, private val martHotelDa
 
     }
 
+    fun getOneMartHorel(id :String ): LiveData<MartHotelEntity> = martHotelDao.getMartHotelId(id)
 
 }
 fun MartHotel.toEntity(): MartHotelEntity = MartHotelEntity(this.id,this.price,this.type,this.imgSrc)
