@@ -1,8 +1,12 @@
 package com.example.ejercicio5m6r.view.recycler
 
+import android.icu.lang.UCharacter.GraphemeClusterBreak.V
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.os.persistableBundleOf
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.ejercicio5m6r.R
@@ -35,6 +39,7 @@ class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
     }
 
     fun setData(martHotel: List<MartHotelEntity>) {
+
         this.martHotels = martHotel
 
         notifyDataSetChanged()
@@ -49,7 +54,14 @@ class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
             }
 
             binding.nameTerreno.text = martHotel.id
-            Log.e("lol", "bind: ${martHotel.id}", )
+
+            binding.cardItem.setOnClickListener{
+
+              val bundle = Bundle()
+                bundle.putString("id",martHotel.id)
+                Navigation.findNavController(binding.root).navigate(R.id.action_showListFragment_to_infoFragment)
+            }
+
         }
 
 

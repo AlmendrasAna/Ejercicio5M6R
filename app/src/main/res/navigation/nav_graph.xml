@@ -9,5 +9,18 @@
         android:id="@+id/showListFragment"
         android:name="com.example.ejercicio5m6r.view.recycler.ShowListFragment"
         android:label="fragment_show_list"
-        tools:layout="@layout/fragment_show_list" />
+        tools:layout="@layout/fragment_show_list" >
+        <action
+            android:id="@+id/action_showListFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.example.ejercicio5m6r.view.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" >
+        <action
+            android:id="@+id/action_infoFragment_to_showListFragment"
+            app:destination="@id/showListFragment" />
+    </fragment>
 </navigation>
